@@ -9,7 +9,7 @@ NumPy SciPy TensorFlow Scikit-learn
 
 ## Getting started
 
-import the ```pybearing``` class as pybearing.
+Import the ```pybearing``` class as pybearing.
 ```python
 from pybearing import pybearing 
 ```
@@ -86,7 +86,7 @@ batch_size = 128             # batch size
 display_step = 1             # number of epoch steps for showing the model results
 model_dir = r"C:\Users\sadoughi\Downloads\save_net.ckpt"   # the location for saving the model
 ```
-now, we can use the ```"fit"``` attribute to fit the model.
+Now, we can use the ```"fit"``` attribute to fit the model.
 
 ```python
 model.fit(processed_data, validation_ratio, learning_rate, num_classes, training_epochs, batch_size, display_step, model_dir)
