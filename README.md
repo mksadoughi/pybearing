@@ -17,7 +17,7 @@ Build the object named as ```"model"``` to load all the attributes defined in py
 ```python
 model = pybearing()
 ```
-Before actually processing data and training a deep learning model, we need to load or prepare training data. 
+Before processing data and training a deep learning model, we need to load or prepare training data. 
 
 1. if you have the data ready you can use the ```"load data"``` attribute, which is explained as follow: 
 
@@ -27,7 +27,7 @@ Define the directory of the data (note that data should be in numpy array format
 dir_data = 'D:\Dropboxfiles\Dropbox\Github_codes\Bearing fault detection\data.npy'
 ```
 Data should have the standard shape of (n by m), where n is the number of samples, the first m-2 columns are the 
-actual vibraton signal, the (m-1)th column is the average speed of the bearing in Hz and the last column is the label of data. label 1 is for the faulty bearing and label 0 is for the healthy bearing condition.
+actual vibration signal, the (m-1)th column is the average speed of the bearing in Hz and the last column is the label of data. label 1 is for the faulty bearing and label 0 is for the healthy bearing condition.
 
 ```python
 import numpy as np
@@ -59,7 +59,7 @@ Call the ```"signal_gen"``` attribute to generate the sample data.
 data = model.signal_gen(time_tot, fs, oc, fn, decay_f, n_samples, speed_range)
 ```
 
-After generating or loading the vibration data, we need to pre-process the signals in order to reduce the noise-to-signal level. To this end, we can use the ```"signal_analyser"``` attribure. In many real-world condition, the number of available samples are not enough. Therefore, this function also implements a data augmentation technique in order to increase the size of data.   
+After generating or loading the vibration data, we need to pre-process the signals in order to reduce the noise-to-signal level. To this end, we can use the ```"signal_analyser"``` attribute. In many real-world condition, the number of available samples are not enough. Therefore, this function also implements a data augmentation technique in order to increase the size of data.   
 
 Define the input parameters for pre-processing the vibration data.
 
@@ -91,10 +91,10 @@ now, we can use the ```"fit"``` attribute to fit the model.
 ```python
 model.fit(processed_data, validation_ratio, learning_rate, num_classes, training_epochs, batch_size, display_step, model_dir)
 ```
-By running the above code the trained model will be save as "ckpt" in the directory defined as model_dir. 
+By running the above code the trained model will be save as ```ckpt``` in the directory defined as model_dir. 
 
 
-The trained model can be used for fault detation using a new set of vibration data. 
+The trained model can be used for fault detecion using a new set of vibration data. 
 
 Similar to explained before, we can  load the testing data or generate new vibration data using the following lines of codes.
 
@@ -102,7 +102,7 @@ Similar to explained before, we can  load the testing data or generate new vibra
 data = model.signal_gen(time_tot, fs, oc, fn, decay_f, n_samples, speed_range)
 processed_data = model.signal_analyser(data, saveing_size, samples, stride, upfactor)
 ```
-Now, we can perform the fault detection on the new vibration dataset based on the trained model saved in model_dir directory. 
+Now, we can perform the fault detection on the new vibration dataset based on the trained model saved in ```model_dir``` directory. 
 
 ```python
 model_dir = r"C:\Users\sadoughi\Downloads\save_net.ckpt"   # the location for saving the model
