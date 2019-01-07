@@ -109,7 +109,7 @@ model_dir = r"C:\Users\sadoughi\Downloads\save_net.ckpt"   # the location for sa
 model.predict(processed_data, num_classes, model_dir)
 ```
 ## Reference
-1. Sadoughi, Mohammakazem, Austin Downey, Garrett Bunge, Aditya Ranawat, Chao Hu, and Simon Laflamme.
+1. Mohammakazem Sadoughi, Austin Downey, Garrett Bunge, Aditya Ranawat, Chao Hu, and Simon Laflamme.
 "A Deep Learning-based Approach for Fault Diagnosis of Roller Element Bearings." (2018). 
 2. McFadden, P. D., and J. D. Smith. "Model for the vibration produced by a single point defect in a rolling element bearing." 
 Journal of sound and vibration 96, no. 1 (1984): 69-82.
